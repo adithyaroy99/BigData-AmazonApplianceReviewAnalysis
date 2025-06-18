@@ -29,6 +29,7 @@ To create and use the environment, we will use Git and Docker:
 
 ```bash
 git clone https://github.com/usmanakhtar/BigDataCourse.git
-
-## Hadoop Copying the File
+```
+#### Hadoop Copying the File
 hadoop fs -mkdir -p /home/datasrc/bigDataTask
+hadoop fs -put pessoas.csv /home/datasrc/bigDataTask
