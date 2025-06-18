@@ -35,3 +35,5 @@ git clone https://github.com/usmanakhtar/BigDataCourse.git
 hadoop fs -mkdir -p /home/datasrc/bigDataTask
 
 hadoop fs -put pessoas.csv /home/datasrc/bigDataTask
+
+hadoop fs -ls /home/datasrc/bigDataTask
