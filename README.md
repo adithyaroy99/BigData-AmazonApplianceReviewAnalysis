@@ -37,3 +37,6 @@ hadoop fs -mkdir -p /home/datasrc/bigDataTask
 hadoop fs -put pessoas.csv /home/datasrc/bigDataTask
 
 hadoop fs -ls /home/datasrc/bigDataTask
+
+Path: 
+df = spark.read.csv('hdfs://namenode:8020/home/datasrc/bigDataTask/pessoas.csv', header=True, inferSchema=True)
