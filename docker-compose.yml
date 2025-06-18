@@ -51,6 +51,25 @@ services:
   # mongo-express:
   # kafkamanager:
   # jupyter-notebook-custom:
+    jupyter-notebook-custom:
+    image: fjardim/jupyter-spark
+    hostname: jupyter-spark
+    container_name: jupyter-spark
+    command: notebook
+    env_file:
+      - ./data/jupyter/jupyter.env
+    ports:
+      - 8889:8889
+      - 4040:4040
+    volumes:
+       - ./data/notebooks:/mnt/notebooks/
+    environment:
+       SPARK_MASTER: local[*]
+       JUPYTER_PORT: 8889
+    deploy:
+      resources:
+        limits:
+          memory: 1g
 
 volumes:
   pgdata:
