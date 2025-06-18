@@ -24,7 +24,6 @@ services:
     hostname: datanode
     volumes:
       - ./data/hdfs/datanode:/hadoop/dfs/data
-      #- ./data/hadoop/bank:/bank
     env_file:
       - ./data/hadoop/hadoop-hive.env
     environment:
@@ -38,20 +37,7 @@ services:
         limits:
           memory: 500m
 
-  # hive-server:
-  # hive-metastore:
-  # hive-metastore-postgresql:
-  # hue:
-  # database:
-  # zookeeper:
-  # kafka:
-  # presto-coordinator:
-  # hbase-master:
-  # mongo:
-  # mongo-express:
-  # kafkamanager:
-  # jupyter-notebook-custom:
-    jupyter-notebook-custom:
+  jupyter-spark:
     image: fjardim/jupyter-spark
     hostname: jupyter-spark
     container_name: jupyter-spark
@@ -59,13 +45,13 @@ services:
     env_file:
       - ./data/jupyter/jupyter.env
     ports:
-      - 8889:8889
-      - 4040:4040
+      - "8889:8889"
+      - "4040:4040"
     volumes:
-       - ./data/notebooks:/mnt/notebooks/
+      - ./data/notebooks:/mnt/notebooks/
     environment:
-       SPARK_MASTER: local[*]
-       JUPYTER_PORT: 8889
+      SPARK_MASTER: local[*]
+      JUPYTER_PORT: 8889
     deploy:
       resources:
         limits:
