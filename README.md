@@ -43,6 +43,21 @@ To stop all services
 ```bash
 docker-compose down 
 ```
+Further changes in the ```bash Docker-compose.yml``` file
+After installation you need to change the image from fjardim/namenode_sqoop to usmanakhtar17/bigdatacourse:namenode. Secondly you need to create a /Workspace folder you need to the update the path of your folder location.
+
+```bash
+  namenode:
+    #image: fjardim/namenode_sqoop
+    #build: .
+    image: usmanakhtar17/bigdatacourse:namenode
+    container_name: namenode
+    hostname: namenode
+    volumes:
+      - ./data/hdfs/namenode:/hadoop/dfs/name
+      - /c/Users/uakhtar/Docker-images/BigDataCourse/bigdata_docker/Workspace:/Workspace 
+```
+
 
 ### Hadoop Setup (MapReduce Streaming)
 
