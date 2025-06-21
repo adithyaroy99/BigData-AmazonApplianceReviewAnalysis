@@ -1,3 +1,5 @@
+
+
 # BIG DATA Analytics 
 Welcome to the BigData Analytics repository! This repository is designed to provide you with hands-on experience and practical instructions for working with various Big Data tools and technologies. This setup will create Docker containers with the following frameworks: HDFS, HBase, Hive, Spark, Jupyter, Hue, MongoDB, Kafka, MySQL, and Zookeeper:
 
@@ -59,7 +61,7 @@ After installation you need to change the image from ```fjardim/namenode_sqoop``
 ```
 
 
-### Hadoop Setup (MapReduce Streaming)
+### Hadoop Setup & (MapReduce Streaming)
 
 First step is to go to the namenode container from terminal. 
 
@@ -71,7 +73,24 @@ Make sure to disable the namenode from safemode operation
 ```bash
 hadoop dfsadmin -safemode leave
 ```
+#### 1. Hadoop Map/Reduce Jobs
 
+First creata folder inside the HDFS
+```bash
+hadoop dfs -mkdir /Data
+```
+Now put the file inside the HDFS
+
+```bash
+hadoop dfs -put /Workspace/Example.text /Data
+```
+To check the file exists inside the HDFS
+```bash
+hadoop dfs -ls  /Data
+```
+
+
+Now run the MapReduce 
 
 hadoop fs -mkdir -p /home/datasrc/bigDataTask
 
