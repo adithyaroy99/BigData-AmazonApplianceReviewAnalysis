@@ -136,3 +136,7 @@ for line in sys.stdin:
 if current_word == word:
     print(f"{current_word}\t{current_count}")
 ```
+To run the MapReduce we need to use the Hadoop Streaming that will run the MapReduce jobs. Run the following code:
+```bash
+hadoop jar /opt/hadoop-2.7.4/share/hadoop/tools/lib/hadoop-streaming-2.7.4.jar -files /Workspace/mapper.py,/Workspace/reducer.py -mapper mapper.py -reducer reducer.py -input /Data -output /Output3
+```
