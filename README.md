@@ -43,8 +43,8 @@ To stop all services
 ```bash
 docker-compose down 
 ```
-Further changes in the ```bash Docker-compose.yml``` file
-After installation you need to change the image from fjardim/namenode_sqoop to usmanakhtar17/bigdatacourse:namenode. Secondly you need to create a /Workspace folder you need to the update the path of your folder location.
+Further changes in the ```Docker-compose.yml``` file
+After installation you need to change the image from ```fjardim/namenode_sqoop``` to ```usmanakhtar17/bigdatacourse:namenode```. Secondly you need to create a ```/Workspace``` folder you need to the update the path of your folder location.
 
 ```bash
   namenode:
