@@ -61,7 +61,7 @@ After installation you need to change the image from ```fjardim/namenode_sqoop``
 ```
 
 
-### Hadoop Setup & (MapReduce Streaming)
+## Hadoop Setup & (MapReduce Streaming)
 
 First step is to go to the namenode container from terminal. 
 
