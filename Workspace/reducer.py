@@ -32,3 +32,4 @@ sorted_word2count = sorted(word2count.items(), key=itemgetter(0))
 # write the results to STDOUT (standard output)
 for word, count in sorted_word2count:
     print('%s\t%s' % (word, count))
+

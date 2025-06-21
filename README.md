@@ -1,7 +1,5 @@
-# BIG DATA ECOSYSTEM WITH DOCKER
-
-Environment for studying the main big data frameworks in Docker.
-This setup will create Docker containers with the following frameworks: HDFS, HBase, Hive, Spark, Jupyter, Hue, MongoDB, Kafka, MySQL, and Zookeeper:
+# BIG DATA Analytics 
+Welcome to the BigData Analytics repository! This repository is designed to provide you with hands-on experience and practical instructions for working with various Big Data tools and technologies. This setup will create Docker containers with the following frameworks: HDFS, HBase, Hive, Spark, Jupyter, Hue, MongoDB, Kafka, MySQL, and Zookeeper:
 
 ## REQUIRED SOFTWARE
 
@@ -19,16 +17,26 @@ To create and use the environment, we will use Git and Docker:
 
 * Suggestion for Windows:
   * Create the docker directory at the root of your drive.
-    Example: C:\docker
+    Open PowerShell Example: C:\docker
 
-* Suggestion for Linux:
+* Suggestion for Mac:
   * Create the directory in the user's home.
-    Example: /home/user/docker
+   Terminal Example: /home/user/docker
 
 #### In a terminal/DOS, within the docker directory, clone the project from GitHub:
 
 ```bash
 git clone https://github.com/usmanakhtar/BigDataCourse.git
+```
+
+```bash
+cd BigDataCourse
+```
+```bash
+docker-compose up -d (to start the services)
+```
+```bash
+docker-compose down (to close the services)
 ```
 #### Hadoop Copying the File
 
