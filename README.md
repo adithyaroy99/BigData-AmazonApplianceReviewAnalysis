@@ -4,8 +4,9 @@ Welcome to the BigData Analytics repository! This repository is designed to prov
 ## REQUIRED SOFTWARE
 
 To create and use the environment, we will use Git and Docker:
-* Install Docker Desktop on Windows [Docker Desktop](https://hub.docker.com/editions/community/docker-ce-desktop-windows) or Docker on [Linux](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+* Install Docker Desktop on Windows [Docker Desktop](https://docs.docker.com/desktop/setup/install/windows-install/) or Docker on [Mac](https://docs.docker.com/desktop/setup/install/mac-install/)
 * [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* Make sure WSL is installed properly and docker is in running state. 
 
 ## SETUP
 
@@ -23,7 +24,7 @@ To create and use the environment, we will use Git and Docker:
   * Create the directory in the user's home.
    Terminal Example: /home/user/docker
 
-#### In a terminal/DOS, within the docker directory, clone the project from GitHub:
+#### Open the Powershell, clone the project from GitHub:
 
 ```bash
 git clone https://github.com/usmanakhtar/BigDataCourse.git
