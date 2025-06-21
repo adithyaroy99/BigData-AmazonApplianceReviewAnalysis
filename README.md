@@ -136,7 +136,15 @@ for line in sys.stdin:
 if current_word == word:
     print(f"{current_word}\t{current_count}")
 ```
-To run the MapReduce we need to use the [Hadoop Streaming](https://hadoop.apache.org/docs/r1.2.1/streaming.html) that will run the MapReduce jobs. Run the following code:
+Test the ```mapper``` and ```reducer``` function from namenode terminal make sure you run the following command from /Workspace folder.  
+```bash
+ echo "foo foo quux labs foo bar quux" | ./mapper.py
+```
+Sort and run the ```reducer``` function 
+```bash
+echo "foo foo quux labs foo bar quux" | ./mapper.py | sort | ./reducer.py
+```
+To run the MapReduce jobs in Python, we need to use the [Hadoop Streaming](https://hadoop.apache.org/docs/r1.2.1/streaming.html) that will run the MapReduce jobs. Run the following code:
 ```bash
 hadoop jar /opt/hadoop-2.7.4/share/hadoop/tools/lib/hadoop-streaming-2.7.4.jar -files /Workspace/mapper.py,/Workspace/reducer.py -mapper mapper.py -reducer reducer.py -input /Data -output /Output3
 ```
