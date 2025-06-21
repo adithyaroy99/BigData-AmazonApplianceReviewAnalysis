@@ -73,7 +73,7 @@ Make sure to disable the namenode from safemode operation
 ```bash
 hadoop dfsadmin -safemode leave
 ```
-#### 1. Hadoop Map/Reduce Jobs
+#### 1. Hadoop Map/Reduce Jobs with Docker
 
 First creata folder inside the HDFS
 ```bash
@@ -99,3 +99,40 @@ Now we will run the mapreduce job of wordcount.
 hadoop jar hadoop-mapreduce-examples-2.7.4.jar wordcound /Data/Eample.txt /Output1
 ```
 
+#### 2. Hadoop Map/Reduce Jobs with Python
+
+In this [tutorial](http://www.quuxlabs.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/), we will describe how to write a simple MapReduce program for Hadoop in the Python programming language. But i have edited the code based on our Hadoop Environment. Here are the updated files and place these file to Workspace folder. 
+
+### `mapper.py`
+```python
+#!/usr/bin/env python3
+import sys
+
+for line in sys.stdin:
+    line = line.strip()
+    for word in line.split():
+        print(f"{word}\t1")
+```
+
+### `reducer.py`
+```python
+#!/usr/bin/env python3
+import sys
+
+current_word = None
+current_count = 0
+
+for line in sys.stdin:
+    word, count = line.strip().split('\t')
+    count = int(count)
+    if word == current_word:
+        current_count += count
+    else:
+        if current_word:
+            print(f"{current_word}\t{current_count}")
+        current_word = word
+        current_count = count
+
+if current_word == word:
+    print(f"{current_word}\t{current_count}")
+```
