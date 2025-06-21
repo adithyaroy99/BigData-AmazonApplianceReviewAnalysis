@@ -88,15 +88,14 @@ To check the file exists inside the HDFS
 ```bash
 hadoop dfs -ls  /Data
 ```
+Now we will run the first MapReduce Job. You need to change directory from ```root@namenode:```
 
+```bash
+cd /opt/hadoop-2.7.4/share/hadoop/mapreduce
+```
+Now we will run the mapreduce job of wordcount. 
 
-Now run the MapReduce 
+```bash
+hadoop jar hadoop-mapreduce-examples-2.7.4.jar wordcound /Data/Eample.txt /Output1
+```
 
-hadoop fs -mkdir -p /home/datasrc/bigDataTask
-
-hadoop fs -put pessoas.csv /home/datasrc/bigDataTask
-
-hadoop fs -ls /home/datasrc/bigDataTask
-
-Path: 
-df = spark.read.csv('hdfs://namenode:8020/home/datasrc/bigDataTask/pessoas.csv', header=True, inferSchema=True)
