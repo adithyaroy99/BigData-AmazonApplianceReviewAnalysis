@@ -148,4 +148,8 @@ To run the MapReduce jobs in Python, we need to use the [Hadoop Streaming](https
 ```bash
 hadoop jar /opt/hadoop-2.7.4/share/hadoop/tools/lib/hadoop-streaming-2.7.4.jar -files /Workspace/mapper.py,/Workspace/reducer.py -mapper mapper.py -reducer reducer.py -input /Data -output /Output3
 ```
-
+to check the output of the MapReduce Job
+```bash
+hdfs dfs -ls /Output3
+hdfs dfs -cat /Output3/part-00000
+```
