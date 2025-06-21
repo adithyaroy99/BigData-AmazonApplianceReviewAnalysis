@@ -43,8 +43,19 @@ To stop all services
 docker-compose down 
 ```
 
+### Hadoop Setup (MapReduce Streaming)
 
-#### Hadoop Copying the File
+First step is to go to the namenode container from terminal. 
+
+```bash
+docker exec -it namenode bash 
+```
+Make sure to disable the namenode from safemode operation
+
+```bash
+hadoop dfsadmin -safemode leave
+```
+
 
 hadoop fs -mkdir -p /home/datasrc/bigDataTask
 
