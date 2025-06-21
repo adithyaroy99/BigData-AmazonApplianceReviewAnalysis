@@ -29,15 +29,21 @@ To create and use the environment, we will use Git and Docker:
 git clone https://github.com/usmanakhtar/BigDataCourse.git
 ```
 
+## Docker
+After cloning the project 
 ```bash
 cd BigDataCourse
 ```
+To start all the services using the docker
 ```bash
-docker-compose up -d (to start the services)
+docker-compose up -d 
 ```
+To stop all services
 ```bash
-docker-compose down (to close the services)
+docker-compose down 
 ```
+
+
 #### Hadoop Copying the File
 
 hadoop fs -mkdir -p /home/datasrc/bigDataTask
