@@ -82,7 +82,7 @@ hadoop dfs -mkdir /Data
 Now put the file inside the HDFS
 
 ```bash
-hadoop dfs -put /Workspace/Example.text /Data
+hadoop dfs -put /Workspace/Example.txt /Data
 ```
 To check the file exists inside the HDFS
 ```bash
