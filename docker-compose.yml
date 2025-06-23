@@ -52,7 +52,7 @@ services:
   # mongo-express:
   # kafkamanager:
   # jupyter-notebook-custom:
-    jupyter-notebook-custom:
+  jupyter-notebook-custom:
     image: fjardim/jupyter-spark
     hostname: jupyter-spark
     container_name: jupyter-spark
