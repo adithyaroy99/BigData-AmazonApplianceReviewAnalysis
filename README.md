@@ -96,7 +96,7 @@ cd /opt/hadoop-2.7.4/share/hadoop/mapreduce
 Now we will run the mapreduce job of wordcount. 
 
 ```bash
-hadoop jar hadoop-mapreduce-examples-2.7.4.jar wordcound /Data/Eample.txt /Output1
+hadoop jar hadoop-mapreduce-examples-2.7.4.jar wordcount /Data/example.txt /Output1
 ```
 
 #### 2. Hadoop Map/Reduce Jobs with Python
