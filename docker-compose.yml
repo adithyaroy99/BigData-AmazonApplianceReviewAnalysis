@@ -1,4 +1,5 @@
-version: '3' 
+version: '3'
+
 services:
 
   namenode:
@@ -7,7 +8,7 @@ services:
     hostname: namenode
     volumes:
       - ./data/hdfs/namenode:/hadoop/dfs/name
-     # - /c/Users/uakhtar/Docker-images/BigDataCourse/bigdata_docker/Workspace:/Workspace
+      # - /c/Users/uakhtar/Docker-images/BigDataCourse/bigdata_docker/Workspace:/Workspace
     environment:
       - CLUSTER_NAME=test
     env_file:
@@ -18,14 +19,14 @@ services:
       resources:
         limits:
           memory: 500m
-  
+
   datanode:
     image: fjardim/datanode
     container_name: datanode
     hostname: datanode
     volumes:
       - ./data/hdfs/datanode:/hadoop/dfs/data
-      #- ./data/hadoop/bank:/bank
+      # - ./data/hadoop/bank:/bank
     env_file:
       - ./data/hadoop/hadoop-hive.env
     environment:
@@ -38,7 +39,6 @@ services:
       resources:
         limits:
           memory: 500m
-
 
   hive-server:
     image: fjardim/hive
@@ -59,7 +59,7 @@ services:
       resources:
         limits:
           memory: 500m
-  
+
   hive-metastore:
     image: fjardim/hive
     container_name: hive_metastore
@@ -77,13 +77,13 @@ services:
       resources:
         limits:
           memory: 500m
-  
+
   hive-metastore-postgresql:
     image: fjardim/hive-metastore
     container_name: hive-metastore-postgresql
     hostname: hive_metastore_postgresql
     volumes:
-      #- ./data/postgresql:/var/lib/postgresql/data
+      # - ./data/postgresql:/var/lib/postgresql/data
       - pgdata:/var/lib/postgresql/data
     depends_on:
       - datanode
@@ -92,7 +92,7 @@ services:
         limits:
           memory: 500m
 
-
+  # Additional services can be enabled below:
   # hive-server:
   # hive-metastore:
   # hive-metastore-postgresql:
@@ -106,6 +106,7 @@ services:
   # mongo-express:
   # kafkamanager:
   # jupyter-notebook-custom:
+
   jupyter-notebook-custom:
     image: fjardim/jupyter-spark
     hostname: jupyter-spark
@@ -114,13 +115,13 @@ services:
     env_file:
       - ./data/jupyter/jupyter.env
     ports:
-      - 8889:8889
-      - 4040:4040
+      - "8889:8889"
+      - "4040:4040"
     volumes:
-       - ./data/notebooks:/mnt/notebooks/
+      - ./data/notebooks:/mnt/notebooks/
     environment:
-       SPARK_MASTER: local[*]
-       JUPYTER_PORT: 8889
+      SPARK_MASTER: local[*]
+      JUPYTER_PORT: 8889
     deploy:
       resources:
         limits:
