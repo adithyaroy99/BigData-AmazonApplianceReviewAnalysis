@@ -129,7 +129,7 @@ services:
         limits:
           memory: 500m
   kafka:
-    image: fjardim/kafka
+    image: usmanakhtar17/kafka
     container_name: kafka
     hostname: kafka
     ports:
@@ -147,7 +147,7 @@ services:
           memory: 500m
     
   kafkamanager:
-    image: fjardim/kafkamanager
+    image: usmanakhtar17/kafkamanager
     container_name: kafkamanager
     hostname: kafkamanager
     environment: 
@@ -175,7 +175,7 @@ services:
           memory: 500m
 
   jupyter-notebook-custom:
-    image: fjardim/jupyter-spark
+    image: usmanakhtar17/jupyter-spark
     hostname: jupyter-spark
     container_name: jupyter-spark
     command: notebook
