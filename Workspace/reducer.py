@@ -1,35 +1,17 @@
-#!/usr/bin/env python3
-
-from operator import itemgetter
+#!/usr/bin/python3
 import sys
 
-# maps words to their counts
-word2count = {}
+rating_counts = {}
 
-# input comes from STDIN
 for line in sys.stdin:
-    # remove leading and trailing whitespace
-    line = line.strip()
-
-    # parse the input we got from mapper.py
-    word, count = line.split('\t', 1)
-    # convert count (currently a string) to int
     try:
-        count = int(count)
-        word2count[word] = word2count.get(word, 0) + count
-    except ValueError:
-        # count was not a number, so silently
-        # ignore/discard this line
+        parts = line.strip().split('\t')
+        if len(parts) == 2:
+            rating = float(parts[0])
+            count = int(parts[1])
+            rating_counts[rating] = rating_counts.get(rating, 0) + count
+    except:
         pass
 
-# sort the words lexigraphically;
-#
-# this step is NOT required, we just do it so that our
-# final output will look more like the official Hadoop
-# word count examples
-sorted_word2count = sorted(word2count.items(), key=itemgetter(0))
-
-# write the results to STDOUT (standard output)
-for word, count in sorted_word2count:
-    print('%s\t%s' % (word, count))
-
+for rating in sorted(rating_counts.keys(), reverse=True):
+    print("{0}\t{1}".format(rating, rating_counts[rating]))
